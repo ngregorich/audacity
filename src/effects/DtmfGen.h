@@ -62,7 +62,7 @@ private:
 
    bool MakeDtmfTone(float *buffer, size_t len, float fs,
                      wxChar tone, sampleCount last,
-                     sampleCount total, float amplitude);
+                     float amplitude);
    void Recalculate();
 
    void UpdateUI();

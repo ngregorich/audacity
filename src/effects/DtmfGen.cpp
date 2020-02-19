@@ -230,7 +230,7 @@ size_t EffectDtmf::ProcessBlock(float **WXUNUSED(inbuf), float **outbuf, size_t 
       if (isTone)
       {
          // generate the tone and append
-         MakeDtmfTone(buffer, len, mSampleRate, dtmfSequence[curSeqPos], curTonePos, numSamplesTone, dtmfAmplitude);
+         MakeDtmfTone(buffer, len, mSampleRate, dtmfSequence[curSeqPos], curTonePos, dtmfAmplitude);
          curTonePos += len;
       }
       else
@@ -474,7 +474,7 @@ void EffectDtmf::Recalculate()
    }
 }
 
-bool EffectDtmf::MakeDtmfTone(float *buffer, size_t len, float fs, wxChar tone, sampleCount last, sampleCount total, float amplitude)
+bool EffectDtmf::MakeDtmfTone(float *buffer, size_t len, float fs, wxChar tone, sampleCount last, float amplitude)
 {
 /*
   --------------------------------------------
